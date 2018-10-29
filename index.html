@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Halloween Page</title>
+	<link rel="stylesheet" type="text/css" href="template/style.css">
+</head>
+<body>
+	<h1><center>Click anywhere on page for hidden image and press r on keyboard to set opacity to 0 on next click</center></h1>
+	<div class="bg">
+		<script>
+			var opacity=0; 
+			document.addEventListener("click", function(event){
+				var divs= document.getElementsByTagName("div");
+				for(var i=0; i<4;i++){
+					opacity+=.25;
+					divs[i].style.opacity= ''+opacity+'';
+				}	
+			});
+			document.addEventListener("keypress", function(event){
+				console.log(event);
+				var key=event.key;
+				if(key=='r'){
+					opacity=-.25;
+				}});
+			</script>
+		</div>
+	</body>
+	</html>
